@@ -1,0 +1,25 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Entorno y secretos
+.env
+.env.*
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Cursor / VS Code (opcional: deja settings locales fuera)
+.vscode/
+*.code-workspace

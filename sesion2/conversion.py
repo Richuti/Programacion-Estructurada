@@ -1,3 +1,5 @@
+# Autor: Richard Diaz
+
 horas = int(input("Ingrese las horas: "))
 
 minutos = horas * 60

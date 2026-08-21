@@ -2,8 +2,10 @@
 nombre = input("Ingrese el nombre del estudiante: ")
 calificacion = float(input("Ingrese la calificación obtenida (0 a 100): "))
 
-if calificacion >= 60:
+if calificacion >= 60 and calificacion <= 89.99:
     resultado = "Aprobado"
+elif calificacion >= 90 and calificacion <= 100:
+    resultado = "Excelente"
 else:
     resultado = "Reprobado"
 

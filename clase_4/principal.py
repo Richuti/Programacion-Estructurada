@@ -13,23 +13,38 @@ descuentoHospedaje = import_module("if_anidados.hospedaje").descuentoHospedaje
 totalFerreteria = import_module("if_anidados.ferreteria").totalFerreteria
 
 
+CYAN = "\033[96m"
+YELLOW = "\033[93m"
+GREEN = "\033[92m"
+RED = "\033[91m"
+BOLD = "\033[1m"
+RESET = "\033[0m"
+
+
+def mostrar_menu():
+    print()
+    print(f"{CYAN}{BOLD}  🛒  MENÚ DE EJERCICIOS  🛒{RESET}")
+    print()
+    print(f"  {YELLOW} 1{RESET}  📦  Inventario de pulpería")
+    print(f"  {YELLOW} 2{RESET}  🏷️   Promoción de una tienda")
+    print(f"  {YELLOW} 3{RESET}  🎯  Meta de ventas")
+    print(f"  {YELLOW} 4{RESET}  🍽️   Entrega de un comedor")
+    print(f"  {YELLOW} 5{RESET}  ⚖️   Peso de productos")
+    print(f"  {YELLOW} 6{RESET}  🏪  Crédito pulpería")
+    print(f"  {YELLOW} 7{RESET}  🚚  Entregas")
+    print(f"  {YELLOW} 8{RESET}  ☕  Cooperativa")
+    print(f"  {YELLOW} 9{RESET}  🏨  Hospedaje")
+    print(f"  {YELLOW}10{RESET}  🔧  Ferretería")
+    print(f"  {YELLOW}11{RESET}  🚪  Salir")
+    print()
+
+
 def main():
     while True:
         os.system("cls")
-        print("=================MENU================")
-        print("1.-------------Inventario de Pulperia")
-        print("2.-------------Promoción de una tienda")
-        print("3.-------------Meta de ventas")
-        print("4.-------------Entrega de un comedor")
-        print("5.-------------Peso de productos")
-        print("6.-------------Pulperia")
-        print("7.-------------Entregas")
-        print("8.-------------Cooperativa")
-        print("9.-------------Hospedaje")
-        print("10.------------Ferreteria")
-        print("11.------------Salir")
+        mostrar_menu()
 
-        opc = int(input("Seleccione una opcion: "))
+        opc = int(input(f"  {GREEN}👉 Seleccione una opción:{RESET} "))
         match opc:
             case 1:
                 inventarioPulperia()
@@ -52,10 +67,12 @@ def main():
             case 10:
                 totalFerreteria()
             case 11:
-                print("Saliendo...")
+                print(f"\n  {GREEN}👋 ¡Hasta luego!{RESET}")
                 break
             case _:
-                print("Opcion no valida")
+                print(f"\n  {RED}❌ Opción no válida{RESET}")
+
+        input(f"\n  {YELLOW}⏎  Presione Enter para continuar...{RESET}")
 
 
 if __name__ == "__main__":

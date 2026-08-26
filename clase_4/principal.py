@@ -1,14 +1,62 @@
 import os
+from importlib import import_module
+
+inventarioPulperia = import_module("if.inventarioPulperia").inventarioPulperia
+promocionTienda = import_module("if.tienda").promocionTienda
+metaVentas = import_module("if.meta").metaVentas
+entregaComedor = import_module("if.comedor").entregaComedor
+pesoProductos = import_module("if.productos").pesoProductos
+creditoPulperia = import_module("if_anidados.pulperia").creditoPulperia
+tarifaEntregas = import_module("if_anidados.entregas").tarifaEntregas
+calidadCooperativa = import_module("if_anidados.cooperativa").calidadCooperativa
+descuentoHospedaje = import_module("if_anidados.hospedaje").descuentoHospedaje
+totalFerreteria = import_module("if_anidados.ferreteria").totalFerreteria
+
+
 def main():
-    os.system("cls") #Limpiar la terminal
-    nombre_asignatura = input("Ingrese la asignatura: ") #La variable nombre_asignatura es de tipo str
-    respuesta = input("La asignatura está activa? (True/False o 1/0): ").strip().lower()
-    is_active = respuesta in ("true", "1", "si", "sí") #La variable is_active es de tipo bool
-    numero_de_creditos = int(input("Ingrese el número de créditos: ")) #La variable numero_de_creditos es de tipo int
-    nota = float(input("Ingrese la nota: ")) #La variable nota es de tipo float
+    while True:
+        os.system("cls")
+        print("=================MENU================")
+        print("1.-------------Inventario de Pulperia")
+        print("2.-------------Promoción de una tienda")
+        print("3.-------------Meta de ventas")
+        print("4.-------------Entrega de un comedor")
+        print("5.-------------Peso de productos")
+        print("6.-------------Pulperia")
+        print("7.-------------Entregas")
+        print("8.-------------Cooperativa")
+        print("9.-------------Hospedaje")
+        print("10.------------Ferreteria")
+        print("11.------------Salir")
 
-    os.system("cls") #Limpiar la terminal
-    print(f"La asignatura {nombre_asignatura} tiene {numero_de_creditos} créditos y la nota es {nota}")
-    print(f"La asignatura {nombre_asignatura} está activa: {is_active}")
+        opc = int(input("Seleccione una opcion: "))
+        match opc:
+            case 1:
+                inventarioPulperia()
+            case 2:
+                promocionTienda()
+            case 3:
+                metaVentas()
+            case 4:
+                entregaComedor()
+            case 5:
+                pesoProductos()
+            case 6:
+                creditoPulperia()
+            case 7:
+                tarifaEntregas()
+            case 8:
+                calidadCooperativa()
+            case 9:
+                descuentoHospedaje()
+            case 10:
+                totalFerreteria()
+            case 11:
+                print("Saliendo...")
+                break
+            case _:
+                print("Opcion no valida")
 
-main()
+
+if __name__ == "__main__":
+    main()

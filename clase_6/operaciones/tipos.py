@@ -5,7 +5,6 @@ def tiposIncompatibles():
 
     cantidad = input("Ingrese la cantidad de productos: ")
 
-    # Aqui se provoca el error: cantidad es una cadena y 10 es un numero
     try:
         total = cantidad + 10
         print(f"El total es: {total}")
@@ -13,7 +12,6 @@ def tiposIncompatibles():
         print("Ocurrio un TypeError porque input() devuelve una cadena")
         print("y Python no puede sumar una cadena con un numero entero.")
 
-    # Correccion: se convierte la cadena a entero antes de operar
     try:
         total = int(cantidad) + 10
         print(f"Corregido, el total es: {total}")

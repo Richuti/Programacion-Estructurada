@@ -3,7 +3,6 @@ import os
 def calculoComision():
     os.system("cls")
 
-    # Se espera un ValueError si el usuario escribe texto en lugar de numeros
     try:
         ventas = float(input("Ingrese el total de ventas: "))
         porcentaje = float(input("Ingrese el porcentaje de comision: "))

@@ -12,8 +12,6 @@ def menuOpciones():
     except ValueError:
         print("Error: la opcion debe ser un numero entero")
     else:
-        # El else solo confirma que la conversion funciono,
-        # el rango se sigue validando aparte
         if opcion == 1:
             print("Consultando saldo...")
         elif opcion == 2:

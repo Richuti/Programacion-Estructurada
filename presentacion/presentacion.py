@@ -4,19 +4,38 @@ import os
 def main():
     mensaje = "Bienvenido a Tienda Vale Todo"
     nombre = None
+    descripcion1 = descripcion2 = ""
+    precio1 = precio2 = 0.0
+    cantidad1 = cantidad2 = 0
     porcentaje = 0.0
     impuesto = 0.15
     tasa_recargo = 0.10
     condicion = ""
-    detalle = ""
     subtotal = descuento = iva = recargo = total = 0.0
 
     nombre = leer_cliente(mensaje)
 
-    subtotal, descuento, iva, recargo, total, detalle, porcentaje, condicion = calcular_total(
-        impuesto, tasa_recargo
+    #Cambio #1
+    descripcion1 = input("Ingrese el nombre del producto 1: ")
+    precio1 = float(input("Ingrese el precio del producto 1: "))
+    cantidad1 = int(input("Ingrese la cantidad del producto 1: "))
+
+    descripcion2 = input("Ingrese el nombre del producto 2: ")
+    precio2 = float(input("Ingrese el precio del producto 2: "))
+    cantidad2 = int(input("Ingrese la cantidad del producto 2: "))
+
+    porcentaje = float(input("Ingrese el porcentaje de descuento: "))
+
+    #Cambio #2
+    condicion = input("Condición de venta (contado/credito): ").strip().lower()
+
+    subtotal, descuento, iva, recargo, total = calcular_total(
+        precio1, cantidad1, precio2, cantidad2,
+        porcentaje, impuesto, condicion, tasa_recargo
     )
-    mostrar_factura(nombre, detalle, porcentaje, impuesto, condicion,
+    mostrar_factura(nombre, descripcion1, precio1, cantidad1,
+                    descripcion2, precio2, cantidad2,
+                    porcentaje, impuesto, condicion,
                     subtotal, descuento, iva, recargo, total)
 
 
@@ -28,36 +47,22 @@ def leer_cliente(mensaje):
     return nombre
 
 
-def calcular_total(impuesto, tasa_recargo):
-    subtotal, detalle = calcular_total_productos()
-
-    porcentaje = float(input("Ingrese el porcentaje de descuento: "))
-    condicion = input("Condición de venta (contado/credito): ").strip().lower()
-
+def calcular_total(precio1, cantidad1, precio2, cantidad2,
+                   porcentaje, impuesto, condicion, tasa_recargo):
+    subtotal = calcular_total_productos(precio1, cantidad1, precio2, cantidad2)
     descuento = calcular_descuento(subtotal, porcentaje)
     iva = subtotal * impuesto
     total = subtotal + iva - descuento
     recargo = calcular_recargo(total, condicion, tasa_recargo)
     total = total + recargo
-    return subtotal, descuento, iva, recargo, total, detalle, porcentaje, condicion
+    return subtotal, descuento, iva, recargo, total
 
 
 #Cambio #1
-def calcular_total_productos():
-    acumulado = 0.0
-    detalle = ""
-    continuar = "s"
-    while continuar.strip().lower() == "s":
-        descripcion = input("Ingrese el nombre del producto: ")
-        precio = float(input("Ingrese el precio del producto: "))
-        cantidad = int(input("Ingrese la cantidad del producto: "))
-
-        importe = calcular_subtotal(precio, cantidad)
-        acumulado += importe
-        detalle += f"{descripcion:<20}{precio:>10.2f}{cantidad:>8}{importe:>12.2f}\n"
-
-        continuar = input("¿Desea agregar otro producto? (s/n): ")
-    return acumulado, detalle
+def calcular_total_productos(precio1, cantidad1, precio2, cantidad2):
+    subtotal1 = calcular_subtotal(precio1, cantidad1)
+    subtotal2 = calcular_subtotal(precio2, cantidad2)
+    return subtotal1 + subtotal2
 
 
 def calcular_subtotal(precio, cantidad):
@@ -78,7 +83,9 @@ def calcular_recargo(total, condicion, tasa_recargo):
     return recargo
 
 
-def mostrar_factura(nombre, detalle, porcentaje, impuesto, condicion,
+def mostrar_factura(nombre, descripcion1, precio1, cantidad1,
+                    descripcion2, precio2, cantidad2,
+                    porcentaje, impuesto, condicion,
                     subtotal, descuento, iva, recargo, total):
     os.system("cls")
     print("*" * 50)
@@ -88,7 +95,8 @@ def mostrar_factura(nombre, detalle, porcentaje, impuesto, condicion,
     print(f"Condición de venta: {condicion}")
     print("-" * 50)
     print(f"{'Producto':<20}{'Precio':>10}{'Cant.':>8}{'Importe':>12}")
-    print(detalle, end="")
+    print(f"{descripcion1:<20}{precio1:>10.2f}{cantidad1:>8}{precio1 * cantidad1:>12.2f}")
+    print(f"{descripcion2:<20}{precio2:>10.2f}{cantidad2:>8}{precio2 * cantidad2:>12.2f}")
     print("-" * 50)
     print(f"{'Subtotal:':<30}{subtotal:>20.2f}")
     print(f"{f'Descuento ({porcentaje:.0f}%):':<30}{descuento:>20.2f}")

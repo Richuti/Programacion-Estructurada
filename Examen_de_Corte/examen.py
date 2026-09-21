@@ -108,4 +108,7 @@ def mostrar_resultados(nombre, salario_basico, inss, vivienda, deduccion,
     print("*" * 50)
 
 
-main()
+try:
+    main()
+except KeyboardInterrupt:
+    print("\nPrograma cancelado por el usuario.")

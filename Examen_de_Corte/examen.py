@@ -43,7 +43,10 @@ def leer_salario():
     while salario_basico <= 0:
         try:
             salario_basico = float(input("Ingrese el salario básico (C$): "))
-            if salario_basico <= 0:
+            if salario_basico != salario_basico or salario_basico == float("inf"):
+                print("Error: ingrese un número válido.")
+                salario_basico = 0.0
+            elif salario_basico <= 0:
                 print("Error: el salario debe ser mayor que cero.")
         except ValueError:
             print("Error: ingrese un número válido.")

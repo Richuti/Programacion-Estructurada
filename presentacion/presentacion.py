@@ -15,7 +15,7 @@ def main():
 
     nombre = leer_cliente(mensaje)
 
-    #Cambio #1
+    #Cambio 1
     descripcion1 = input("Ingrese el nombre del producto 1: ")
     precio1 = float(input("Ingrese el precio del producto 1: "))
     cantidad1 = int(input("Ingrese la cantidad del producto 1: "))
@@ -26,7 +26,7 @@ def main():
 
     porcentaje = float(input("Ingrese el porcentaje de descuento: "))
 
-    #Cambio #2
+    #Cambio 2
     condicion = input("Condición de venta (contado/credito): ").strip().lower()
 
     subtotal, descuento, iva, recargo, total = calcular_total(
@@ -58,7 +58,7 @@ def calcular_total(precio1, cantidad1, precio2, cantidad2,
     return subtotal, descuento, iva, recargo, total
 
 
-#Cambio #1
+#Cambio 1
 def calcular_total_productos(precio1, cantidad1, precio2, cantidad2):
     subtotal1 = calcular_subtotal(precio1, cantidad1)
     subtotal2 = calcular_subtotal(precio2, cantidad2)
@@ -75,7 +75,7 @@ def calcular_descuento(subtotal, porcentaje):
     return descuento
 
 
-#Cambio #2
+#cambio 2
 def calcular_recargo(total, condicion, tasa_recargo):
     recargo = 0.0
     if condicion == "credito" or condicion == "crédito":

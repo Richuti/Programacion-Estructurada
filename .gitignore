@@ -23,3 +23,14 @@ desktop.ini
 # Cursor / VS Code (opcional: deja settings locales fuera)
 .vscode/
 *.code-workspace
+
+# Carpetas locales que no se publican en el repositorio
+Control de Flujo(for-while)/
+Control de Flujo(if/
+Estructuras/
+Listas/
+Manejo de Errores/
+clase_3/
+clase_7/
+clase_8/
+sesion2/

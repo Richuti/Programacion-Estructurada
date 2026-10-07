@@ -1,0 +1,6 @@
+Servidor web Activo
+Servidor de correo Inactivo
+Base de datos Activo
+Servidor de archivos Activo
+Respaldo en la nube Inactivo
+Servidor DNS Activo

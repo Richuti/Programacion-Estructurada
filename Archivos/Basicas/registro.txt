@@ -1,3 +1,0 @@
-Servidor web
-Base de datos
-Switch de red

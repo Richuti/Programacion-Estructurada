@@ -1,8 +1,0 @@
-SRV-01 Servidor web
-
-SRV-02 Base de datos
-   
-SRV-03 Correo
-SRV-04 Respaldo
-
-SRV-05 DNS

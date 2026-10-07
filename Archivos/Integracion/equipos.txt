@@ -1,8 +1,0 @@
-Servidor web - Activo
-Base de datos - Activo
-Servidor de correo - Detenido
-Servidor web - Activo
-Firewall - Activo
-Respaldo en la nube - Mantenimiento
-Base de datos - Activo
-Servidor DNS - Detenido

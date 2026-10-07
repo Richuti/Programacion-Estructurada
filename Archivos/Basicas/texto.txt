@@ -1,3 +1,0 @@
-Python permite trabajar con archivos de texto
-Los archivos guardan la informacion de forma permanente
-Cada linea puede representar un registro

@@ -1,7 +1,0 @@
-ventas.csv
-reporte.pdf
-clientes.csv
-notas.txt
-inventario.xlsx
-empleados.csv
-respaldo.zip

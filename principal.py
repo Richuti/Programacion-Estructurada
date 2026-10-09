@@ -21,11 +21,27 @@ def main():
             case 1:
                 agregar_empleado()
             case 2:
-                buscar_empleado()
+                id = input("Ingrese el ID del empleado a buscar: ")
+                index = buscar_empleado(id)
+                if index != None:
+                    print(f"Empleado encontrado: {nomina[index]['nombre']}")
+                    print(f"Salario: {nomina[index]['salario']}")
+                    print(f"Antiguedad: {nomina[index]['antiguedad']}")
+                    print(f"Departamento: {nomina[index]['departamento']}")
+                else:
+                    print("Empleado no encontrado")
             case 3:
-                eliminar_empleado()
+                id = input("Ingrese el ID del empleado a eliminar: ")
+                if eliminar_empleado(id):
+                    print("Empleado eliminado")
+                else:
+                    print("Empleado no encontrado")
             case 4:
-                actualizar_empleado()
+                id = input("Ingrese el ID del empleado a actualizar: ")
+                if actualizar_empleado(id):
+                    print("Empleado actualizado")
+                else:
+                    print("Empleado no encontrado")
             case 5:
                 guardar_nomina()
             case 6:
@@ -34,5 +50,6 @@ def main():
                 break
             case _:
                 print("Opcion no valida")
+        input("Presione Enter para continuar...")
 
 main()  

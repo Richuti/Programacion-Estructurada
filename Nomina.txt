@@ -1,2 +1,6 @@
 1,Richard,45000.0,10,Ingenieria
-2,Alex,100000.0,12,Marketing
+2,Richard,100000.0,12,Marketing
+5,Richard,25000.0,3,Ingenieria
+6,Richard,200010.0,3,Marketing
+3,Richard,2400.0,1,Ingenieria
+4,Richard,24000.0,2,Diseno

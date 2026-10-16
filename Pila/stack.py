@@ -4,18 +4,13 @@ class Product:
         self.nombre = nombre
         self.precio = precio
         self.stock = stock
-        
-
-class Node:
-    def __init__(self, data: Product):
-        self.data = data
-        self.sig = None
+        self.next = None
     
 class Stack:
     def __init__(self):
         self.top = None
 
-    def push(self, new: Node):
+    def push(self, new: Product):
         if self.top == None: 
             self.top = new
         else:

@@ -1,4 +1,5 @@
-from stack import Node, Stack, Product
+from typing import Self
+from stack import Stack, Product
 
 def main():
     pila = Stack()
@@ -6,5 +7,8 @@ def main():
     pila.push(prod)
     prod = Product(2, "Resfresco Selva", 35, 50)
     pila.push(prod)
+    p = pila.pop()
+    p.print()
+    
 
 main()

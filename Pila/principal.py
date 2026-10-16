@@ -1,4 +1,3 @@
-from typing import Self
 from stack import Stack, Product
 
 def main():
@@ -7,8 +6,9 @@ def main():
     pila.push(prod)
     prod = Product(2, "Resfresco Selva", 35, 50)
     pila.push(prod)
-    p = pila.pop()
-    p.print()
+    productos = pila.clear()
+    for p in productos:
+        p.print()
     
 
 main()

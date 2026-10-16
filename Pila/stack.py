@@ -30,9 +30,21 @@ class Stack:
                 self.top = None
         return prod
 
+    def peek(self) -> Product:
+        return self.top
+
     def isEmpty(self) -> bool:
         if self.top == None:
             return True
         else:
             return False
 
+    def clear(self) -> list[Product]:
+        lista: list[Product] = []
+        while not self.isEmpty():
+            prod: Product = self.pop()
+            prod.next = None
+            lista.append(prod)
+        return lista
+
+    

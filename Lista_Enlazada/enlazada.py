@@ -26,7 +26,7 @@ class LinkedList:
                     if new.cod > temp.cod:
                         temp = temp.next
                     else:
-                        new.next = temp
-                        temp = new
-                        break
-            
+                        new.next = new
+                        return True
+            else:
+                return False

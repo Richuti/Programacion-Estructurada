@@ -1,0 +1,6 @@
+cadena = input("Ingrese una cadena: ")
+caracter = input("Ingrese el carácter a contar: ")
+cadena_normalizada = cadena.lower()
+caracter_normalizado = caracter.lower()
+veces = cadena_normalizada.count(caracter_normalizado)
+print("El carácter", caracter, "aparece", veces, "veces")

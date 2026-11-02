@@ -1,0 +1,4 @@
+SRV-01|Servidor web|Activo
+SRV-02|Base de datos|Activo
+SRV-03|Correo|Inactivo
+SRV-04|Respaldo|Activo

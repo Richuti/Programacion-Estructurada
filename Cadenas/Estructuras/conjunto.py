@@ -1,0 +1,6 @@
+frase = input("Ingrese una frase: ")
+palabras = frase.lower().split()
+palabras_unicas = set(palabras)
+print(palabras)
+print(palabras_unicas)
+print("Palabras diferentes:", len(palabras_unicas))

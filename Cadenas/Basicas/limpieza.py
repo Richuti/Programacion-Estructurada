@@ -1,0 +1,6 @@
+identificador = input("Ingrese el identificador: ")
+identificador_limpio = identificador.strip()
+identificador_limpio = identificador_limpio.replace(" ", "")
+identificador_limpio = identificador_limpio.replace("-", "")
+print("Original:", identificador)
+print("Limpio:", identificador_limpio)
